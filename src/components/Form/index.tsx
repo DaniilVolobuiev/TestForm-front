@@ -76,6 +76,7 @@ const Form = () => {
     mode: 'onChange',
   });
   const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log('data', data);
     dispatch(postData(data));
     reset();
   };

@@ -28,9 +28,7 @@ export const SendButton: React.FC = () => {
   const status = useAppSelector((state) => state.dataSlice.status);
   return (
     <>
-      <SendButtonElem type="submit" disabled={status === 'loading'}>
-        Send Message
-      </SendButtonElem>
+      <SendButtonElem type="submit">Send Message</SendButtonElem>
     </>
   );
 };
