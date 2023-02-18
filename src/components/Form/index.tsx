@@ -94,7 +94,7 @@ const Form = () => {
             helperText={errors.message?.message}
             width="280px"
             height="189px"
-            placeholder="Your message*"
+            placeholder="Your e-mail*"
             label="message"
             register={register}
             required

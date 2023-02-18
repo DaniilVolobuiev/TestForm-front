@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { StyledComponent } from 'styled-components';
 import { Path, useForm, UseFormRegister, SubmitHandler } from 'react-hook-form';
 
 interface IFormValues {
@@ -9,17 +9,19 @@ interface IFormValues {
 }
 
 interface TextFieldProps {
-  placeholder?: string;
-  width?: string;
-  height?: string;
+  placeholder: string;
+  type?: string;
+  width: string;
+  height: string;
   label: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
   required: boolean;
+  helperText?: string;
 }
 
-export const TextFieldElem = styled.textarea`
-  min-width: ${(props) => props.width || 'auto'};
-  height: ${(props) => props.height || 'auto'};
+export const TextFieldElem = styled.textarea<any>`
+  min-width: ${(props: any) => props.width || 'auto'};
+  height: ${(props: any) => props.height || 'auto'};
   width: 100%;
 
   font-size: 18px;
