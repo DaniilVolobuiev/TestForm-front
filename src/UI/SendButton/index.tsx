@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useAppSelector } from '../../redux/hooks';
 
-const SendButtonElem = styled.button`
+const SendButtonElem = styled.button<any>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,9 +25,12 @@ const SendButtonElem = styled.button`
 `;
 
 export const SendButton: React.FC = () => {
+  const status = useAppSelector((state) => state.dataSlice.status);
   return (
     <>
-      <SendButtonElem type="submit">Send Message</SendButtonElem>
+      <SendButtonElem type="submit" disabled={status === 'loading'}>
+        Send Message
+      </SendButtonElem>
     </>
   );
 };

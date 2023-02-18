@@ -17,6 +17,7 @@ interface TextFieldProps {
   register: UseFormRegister<IFormValues>;
   required: boolean;
   helperText?: string;
+  errors?: any;
 }
 
 export const TextFieldElem = styled.textarea<any>`
@@ -64,15 +65,19 @@ export const TextField: React.FC<TextFieldProps> = ({
   label,
   register,
   required,
+  helperText,
+  errors,
 }) => {
   return (
     <>
       <TextFieldElem
+        onClick={() => console.log('helperTet', errors)}
         placeholder={placeholder}
         width={width}
         height={height}
         {...register(label, { required })}
       />
+      {/* {errors.name && <p>{errors.name.message}</p>} */}
     </>
   );
 };
