@@ -87,7 +87,7 @@ const Form = () => {
           <img src={yellowFace} />
         </YellowFace>
 
-        <Header>Reach Out To Us!</Header>
+        <Header>Reach out to us!</Header>
         <FieldWrapper>
           <TextField
             width="280px"
